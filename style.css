@@ -1,0 +1,763 @@
+/* ================= BASIC ================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #172033;
+}
+
+
+/* ================= HEADER ================= */
+
+header {
+    height: 70px;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 8%;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+
+    position: sticky;
+    top: 0;
+
+    z-index: 100;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #2454c5;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #2454c5;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 470px;
+
+    background: linear-gradient(
+        135deg,
+        #132754,
+        #2454c5
+    );
+
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 70px 10%;
+
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    line-height: 1.1;
+
+    margin-bottom: 25px;
+}
+
+.hero h1 span {
+    display: block;
+    color: #a9c7ff;
+}
+
+.hero-content > p:not(.tag) {
+    font-size: 17px;
+    color: #dbe5ff;
+
+    margin-bottom: 30px;
+}
+
+.button {
+    display: inline-block;
+
+    padding: 13px 25px;
+
+    background: white;
+    color: #2454c5;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #eef3ff;
+}
+
+
+/* ================= HERO STATUS ================= */
+
+.hero-status {
+    width: 290px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border-radius: 20px;
+
+    background: rgba(255,255,255,0.12);
+
+    border: 1px solid rgba(255,255,255,0.25);
+}
+
+.parking-symbol {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.hero-status h2 {
+    margin-bottom: 8px;
+}
+
+.online {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.available-number {
+    display: flex;
+    flex-direction: column;
+}
+
+.available-number span {
+    font-size: 48px;
+    font-weight: bold;
+}
+
+.available-number small {
+    color: #dbe5ff;
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+    width: 82%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 60px 0;
+}
+
+
+/* ================= SECTION TITLE ================= */
+
+.section-title {
+    margin-bottom: 25px;
+}
+
+.section-title p {
+    color: #2454c5;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    font-size: 28px;
+    margin-top: 5px;
+}
+
+
+/* ================= INPUT ================= */
+
+.input-section {
+    margin-bottom: 40px;
+}
+
+.input-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: flex-end;
+
+    gap: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.input-group {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: bold;
+
+    color: #4b5563;
+}
+
+.input-group input {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #2454c5;
+
+    box-shadow:
+        0 0 0 3px rgba(36,84,197,0.1);
+}
+
+#updateButton {
+    padding: 14px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #2454c5;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+#updateButton:hover {
+    background: #173b8f;
+}
+
+
+/* ================= STATS ================= */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.05);
+}
+
+.stat-card p {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.stat-card h2 {
+    font-size: 28px;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+}
+
+.icon.blue {
+    background: #e8efff;
+}
+
+.icon.red {
+    background: #ffe8e8;
+}
+
+.icon.green {
+    background: #e4f8ed;
+}
+
+.icon.purple {
+    background: #f0eaff;
+}
+
+
+/* ================= OCCUPANCY ================= */
+
+.occupancy-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    margin-bottom: 60px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.05);
+}
+
+.occupancy-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.occupancy-header h3 {
+    font-size: 19px;
+}
+
+.occupancy-header p {
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.occupancy-header strong {
+    font-size: 30px;
+    color: #2454c5;
+}
+
+.progress {
+    width: 100%;
+    height: 14px;
+
+    background: #e9edf5;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+
+    width: 72%;
+
+    background: #2454c5;
+
+    border-radius: 20px;
+
+    transition: width 0.5s;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+
+    color: #7b8494;
+
+    font-size: 12px;
+
+    margin-top: 8px;
+}
+
+
+/* ================= CHARTS ================= */
+
+.charts {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+.chart-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.05);
+}
+
+.chart-card h3 {
+    font-size: 18px;
+}
+
+.chart-card > p {
+    color: #6b7280;
+    font-size: 13px;
+
+    margin-bottom: 20px;
+}
+
+.chart-container {
+    height: 280px;
+}
+
+
+/* ================= PEAK ================= */
+
+.peak-card {
+    background: #eaf1ff;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 25px;
+
+    margin-bottom: 60px;
+}
+
+.peak-icon {
+    width: 60px;
+    height: 60px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 28px;
+}
+
+.peak-card h2 {
+    font-size: 30px;
+    color: #2454c5;
+}
+
+.peak-card p:last-child {
+    color: #5d6676;
+    font-size: 14px;
+}
+
+
+/* ================= LEGEND ================= */
+
+.legend {
+    display: flex;
+
+    gap: 25px;
+
+    margin-bottom: 20px;
+
+    color: #5d6676;
+
+    font-size: 14px;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+}
+
+.legend-box {
+    width: 14px;
+    height: 14px;
+
+    border-radius: 4px;
+}
+
+.legend-box.available {
+    background: #36b878;
+}
+
+.legend-box.occupied {
+    background: #e55353;
+}
+
+
+/* ================= PARKING GRID ================= */
+
+.parking-grid {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(10, 1fr);
+
+    gap: 12px;
+
+    margin-bottom: 60px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.05);
+}
+
+.slot {
+    height: 55px;
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.slot:hover {
+    transform: translateY(-3px);
+}
+
+.slot.available {
+    background: #dff7e9;
+    color: #16804b;
+}
+
+.slot.occupied {
+    background: #ffe1e1;
+    color: #c53737;
+}
+
+
+/* ================= SUMMARY ================= */
+
+.summary {
+    margin-bottom: 30px;
+}
+
+.summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.summary-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.05);
+}
+
+.summary-card span {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.summary-card strong {
+    color: #2454c5;
+    font-size: 30px;
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background: #14213d;
+
+    color: white;
+
+    padding: 35px 10%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer p {
+    color: #bdc8dc;
+    font-size: 13px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .charts {
+        grid-template-columns: 1fr;
+    }
+
+    .parking-grid {
+        grid-template-columns:
+            repeat(5, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 55px 5%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    .input-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #updateButton {
+        width: 100%;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .parking-grid {
+        grid-template-columns:
+            repeat(4, 1fr);
+
+        gap: 8px;
+        padding: 15px;
+    }
+
+    .slot {
+        height: 48px;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .peak-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
