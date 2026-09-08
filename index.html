@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartPark | Parking Occupancy Analysis</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <div class="logo">🚗 SmartPark</div>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#slots">Parking Slots</a>
+    </nav>
+</header>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p class="tag">SMART CITY PARKING SOLUTION</p>
+
+        <h1>
+            Parking Space
+            <span>Occupancy Analysis</span>
+        </h1>
+
+        <p>
+            A simple and interactive system to monitor parking
+            availability, occupancy and parking patterns.
+        </p>
+
+        <a href="#dashboard" class="button">
+            View Dashboard ↓
+        </a>
+
+    </div>
+
+
+    <div class="hero-status">
+
+        <div class="parking-symbol">🅿️</div>
+
+        <h2>Parking Status</h2>
+
+        <p class="online">
+            ● System Online
+        </p>
+
+        <div class="available-number">
+            <span id="heroAvailable">14</span>
+            <small>spaces available</small>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MAIN ================= -->
+
+<main id="dashboard">
+
+
+<!-- ================= USER INPUT ================= -->
+
+<section class="input-section">
+
+    <div class="section-title">
+
+        <p>UPDATE PARKING</p>
+
+        <h2>Enter Parking Information</h2>
+
+    </div>
+
+
+    <div class="input-card">
+
+        <div class="input-group">
+
+            <label for="totalInput">
+                Total Parking Spaces
+            </label>
+
+            <input
+                type="number"
+                id="totalInput"
+                min="1"
+                value="50"
+                placeholder="Example: 50"
+            >
+
+        </div>
+
+
+        <div class="input-group">
+
+            <label for="availableInput">
+                Available Spaces
+            </label>
+
+            <input
+                type="number"
+                id="availableInput"
+                min="0"
+                value="14"
+                placeholder="Example: 14"
+            >
+
+        </div>
+
+
+        <button id="updateButton">
+            Update Parking
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DASHBOARD CARDS ================= -->
+
+<section class="stats">
+
+    <div class="stat-card">
+
+        <div class="icon blue">🅿️</div>
+
+        <div>
+            <p>Total Spaces</p>
+            <h2 id="totalSpaces">50</h2>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="icon red">🚘</div>
+
+        <div>
+            <p>Occupied</p>
+            <h2 id="occupiedSpaces">36</h2>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="icon green">✓</div>
+
+        <div>
+            <p>Available</p>
+            <h2 id="availableSpaces">14</h2>
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="icon purple">📊</div>
+
+        <div>
+            <p>Occupancy Rate</p>
+            <h2 id="occupancyRate">72%</h2>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PROGRESS ================= -->
+
+<section class="occupancy-card">
+
+    <div class="occupancy-header">
+
+        <div>
+            <h3>Current Occupancy</h3>
+            <p>Parking lot utilization</p>
+        </div>
+
+        <strong id="occupancyText">72%</strong>
+
+    </div>
+
+
+    <div class="progress">
+        <div
+            id="progressFill"
+            class="progress-fill">
+        </div>
+    </div>
+
+
+    <div class="progress-labels">
+        <span>0% Empty</span>
+        <span>100% Full</span>
+    </div>
+
+</section>
+
+
+<!-- ================= ANALYSIS ================= -->
+
+<section id="analysis">
+
+    <div class="section-title">
+
+        <p>DATA ANALYSIS</p>
+
+        <h2>Occupancy Trends</h2>
+
+    </div>
+
+
+    <div class="charts">
+
+        <div class="chart-card">
+
+            <h3>Hourly Occupancy</h3>
+
+            <p>Occupied spaces throughout the day</p>
+
+            <div class="chart-container">
+                <canvas id="hourlyChart"></canvas>
+            </div>
+
+        </div>
+
+
+        <div class="chart-card">
+
+            <h3>Weekly Occupancy</h3>
+
+            <p>Average occupied spaces per day</p>
+
+            <div class="chart-container">
+                <canvas id="weeklyChart"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PEAK HOUR ================= -->
+
+<section class="peak-card">
+
+    <div class="peak-icon">
+        ⏰
+    </div>
+
+    <div>
+
+        <p class="tag">BUSIEST PERIOD</p>
+
+        <h2 id="peakHour">
+            2:00 PM
+        </h2>
+
+        <p>
+            The parking lot is expected to experience
+            its highest occupancy around this period.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ================= PARKING SLOTS ================= -->
+
+<section id="slots">
+
+    <div class="section-title">
+
+        <p>LIVE PARKING VIEW</p>
+
+        <h2>Parking Slot Status</h2>
+
+    </div>
+
+
+    <div class="legend">
+
+        <div>
+            <span class="legend-box available"></span>
+            Available
+        </div>
+
+        <div>
+            <span class="legend-box occupied"></span>
+            Occupied
+        </div>
+
+    </div>
+
+
+    <div id="parkingGrid" class="parking-grid"></div>
+
+</section>
+
+
+<!-- ================= SUMMARY ================= -->
+
+<section class="summary">
+
+    <div class="section-title">
+
+        <p>INSIGHTS</p>
+
+        <h2>Parking Analysis Summary</h2>
+
+    </div>
+
+
+    <div class="summary-grid">
+
+        <div class="summary-card">
+
+            <span>Highest Occupancy</span>
+
+            <strong id="highestOccupancy">
+                94%
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>Lowest Occupancy</span>
+
+            <strong id="lowestOccupancy">
+                36%
+            </strong>
+
+        </div>
+
+
+        <div class="summary-card">
+
+            <span>Average Occupancy</span>
+
+            <strong id="averageOccupancy">
+                68%
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div>
+        <h3>🚗 SmartPark</h3>
+        <p>Parking Space Occupancy Analysis</p>
+    </div>
+
+    <p>Mini Project © 2026</p>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
